@@ -1,0 +1,28 @@
+<div class="row">
+	<p id="notice"><%= notice %></p>
+
+	<div class="span9">
+ 	 	<h1>Категория:
+ 	 	<%= @category.title %></h1>
+	</div>
+
+	<% @category.items.each do |item| %>
+		<div class="col-md-4">
+			<%= image_tag item.image.to_s, :class => "img-responsive" %>
+			<h3><%= item.title %></h3>
+
+			<p>
+				<%= truncate(item.text, length: 80, omission: "...") %>
+			</p>
+			<p>
+				<%= link_to "Открыть полностью", item_path(item), :class => "btn btn-default" %>
+			</p>
+		</div>
+	<% end %>
+	</div>
+<hr>
+	<div class>
+	<%= link_to 'Edit', edit_category_path(@category), :class => "btn btn-default" %> |
+	<%= link_to 'Back', categories_path, :class => "btn btn-default" %>
+	<%= link_to 'New item', new_category_item_path(@category), :class => "btn btn-default"  %>
+	</div>
