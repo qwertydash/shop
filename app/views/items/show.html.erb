@@ -3,7 +3,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @item.category_id %>
+  <%= @item.category.title %>
 </p>
 
 <p>
@@ -13,7 +13,7 @@
 
 <p>
   <strong>Text:</strong>
-  <%= @item.text %>
+  <%= simple_format(@item.text) %>
 </p>
 
 <p>
@@ -26,5 +26,5 @@
   <%= image_tag @item.image %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Редактировать', edit_item_path(@item), :class => "btn btn-default" %> |
+<%= link_to 'Back', items_path, :class => "btn btn-default" %>
