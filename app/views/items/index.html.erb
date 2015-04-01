@@ -2,7 +2,7 @@
 
 <h1>Товары</h1>
 
-<%= link_to 'Новый товар', new_item_path, :class => "btn btn-primary btn-lg" %>
+<%= button_to 'Новый товар', new_item_path, :class => "btn btn-primary btn-lg", :method => :get %>
 
 <div class="row">
 <% @items.each do |item| %>

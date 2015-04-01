@@ -1,0 +1,21 @@
+.navbar {
+	border:none;		
+}
+
+.navbar-default .navbar-nav > li > a{
+	font-family: 'Roboto', sans-serif;
+	color:#6C6C6C;
+}
+
+.navbar-default .navbar-nav > li > a:hover  {
+	background-color: #B3B3B3;
+	color: #FFFFFF;	
+}
+
+.btn-lg {
+	color:#FFFFFF;
+}
+
+footer p{
+	font-family: 'Roboto', sans-serif;
+}
