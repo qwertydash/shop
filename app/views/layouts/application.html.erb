@@ -50,8 +50,15 @@
         <a class="navbar-brand" href="#"><%=image_tag("logo.png") %></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "КАТЕГОРИИ", "/categories"  %></li>
-            <li><%= link_to "ПРЕДМЕТЫ", "/items"  %></li>
+           
+        </li> <%= drop_down "Каталог" do %>
+        <%= menu_item "Товары", items_path %>
+        <%= menu_item "Категории", categories_path %>
+          <% end %>
+        </li>
+
+        <li><%= link_to "О компании", "/link1" %> </li>
+  
             
           </ul>
         </div>
