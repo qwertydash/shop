@@ -1,6 +1,8 @@
 Rails.application.routes.draw do 
 
 
+  get 'pages/home'
+
   resources :items
   resources :categories do
   	resources :items
