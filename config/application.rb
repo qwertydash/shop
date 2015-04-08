@@ -21,6 +21,7 @@ module Shop
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :ru
 
+
     
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
