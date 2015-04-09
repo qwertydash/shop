@@ -1,6 +1,7 @@
 Rails.application.routes.draw do 
 
 
+  devise_for :admins, :skip => :registrations
   get 'pages/home'
 
   resources :items
