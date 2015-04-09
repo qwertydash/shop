@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Товары</h1>
-
+<% if admin_signed_in? %>
 <%= button_to 'Новый товар', new_item_path, :class => "btn btn-primary btn-lg", :method => :get %>
-
+<% end %>
 <div class="row">
 <% @items.each do |item| %>
     <div class="col-md-4">
@@ -16,12 +16,14 @@
       <p>
         <%= link_to "Открыть полностью", item_path(item), :class => "btn btn-default" %>
       </p>
+      <% if admin_signed_in? %>
       <p>
         <%= link_to 'Редактировать', edit_item_path(item), :class => "btn btn-default" %>
       </p>
       <p>
         <%= link_to 'Удалить', item, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-default" %>
       </p>
+      <% end %>
     </div>
      <% end %>
 </div>

@@ -42,6 +42,7 @@
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container-fluid">
+     
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
@@ -53,7 +54,7 @@
         </a>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav ">
            
         </li> <%= drop_down "Каталог" do %>
         <%= menu_item "Товары", items_path %>
@@ -61,10 +62,17 @@
           <% end %>
         </li>
 
-        <li><%= link_to "О компании", "/link1" %> </li>
-  
-            
+        <li><%= link_to "О компании", "/link1" %> </li> 
           </ul>
+     <% if admin_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to('Выйти из режима администратора', destroy_admin_session_path, :method => :delete) %></li>
+      </ul>
+      <% else %>
+      
+      <% end %>
+       </div>
+
         </div>
       </div>
     </div>

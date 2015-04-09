@@ -22,7 +22,10 @@
 	</div>
 <hr>
 	<div class>
-	<%= link_to 'Редактировать категорию', edit_category_path(@category), :class => "btn btn-default" %> |
+	
 	<%= link_to 'Назад', categories_path, :class => "btn btn-default" %>
+	<% if admin_signed_in? %>
+	<%= link_to 'Редактировать категорию', edit_category_path(@category), :class => "btn btn-default" %> |
 	<%= link_to 'Новый товар', new_category_item_path(@category), :class => "btn btn-default"  %>
+	<% end %>
 	</div>

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+before_filter :check_admin_logged_in!, :except => [:show, :index]
   # GET /items
   # GET /items.json
   def index

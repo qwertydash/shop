@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'russian'
 gem 'devise'
+gem 'devise-i18n-views'
 
 group :development, :test do
   gem 'byebug'
