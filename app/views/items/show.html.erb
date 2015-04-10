@@ -2,33 +2,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Категория:</strong>
   <%= @item.category.title %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Название:</strong>
   <%= @item.title %>
 </p>
 
 <p>
-  <strong>Text:</strong>
+  <strong>Описание:</strong>
   <%= simple_format(@item.text) %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @item.price %>
+  <strong>Цена:</strong>
+  <%= number_to_currency(@item.price) %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Изображение:</strong>
   <%= link_to image_tag(@item.image.url(:medium)), @item.image.url %>
 </p>
 
 
-<%= link_to 'Back', items_path, :class => "btn btn-default" %>
+<%= link_to 'Назад', items_path, :class => "btn btn-default" %>
 <% if admin_signed_in? %>
 <%= link_to 'Редактировать', edit_item_path(@item), :class => "btn btn-default" %> |
-<%= link_to 'Удалить', @item, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-default" %>
+<%= link_to 'Удалить', @item, method: :delete, data: { confirm: 'Вы уверены?' },:class => "btn btn-default" %>
 <% end %>
