@@ -23,7 +23,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @item.image %>
+  <%= link_to image_tag(@item.image.url(:medium)), @item.image.url %>
 </p>
 
 

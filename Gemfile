@@ -14,6 +14,7 @@ gem 'twitter-bootstrap-rails'
 gem 'russian'
 gem 'devise'
 gem 'devise-i18n-views'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug'
