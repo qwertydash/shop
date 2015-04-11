@@ -9,32 +9,30 @@
             </ol>
             <div class="carousel-inner" data-pg-collapsed>
                 <div class="item active">
-                    <img src="http://pinegrow.com/placeholders/img4.jpg" alt="First slide">
+                    <%= image_tag "sa4.png" %>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Example headline.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            <h1>Вторые очки в подарок!</h1>
+                            <p>Условия акции узнавайте в салонах.</p>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="http://pinegrow.com/placeholders/img3.jpg" alt="Second slide">
+                    <%= image_tag "sa3.png" %>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <h1>Контактные линзы от 29 руб.</h1>
+                            <p><%= button_to 'Посмотреть все', category_path(3), :class => "btn btn-primary btn-lg", :method => :get %></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="http://pinegrow.com/placeholders/img8.jpg" alt="Third slide">
+                    <%= image_tag "sa2.png" %>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                            <h1>Новая коллекция солнцезащитных очков 2014</h1>
+                            <p><%= button_to 'Посмотреть все', category_path(1), :class => "btn btn-primary btn-lg", :method => :get %></p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +41,7 @@
             <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
         <div class="page-header text-center" data-pg-collapsed> 
-            <h1>Добро пожаловать в интернет-магазин 100 очков</h1>
+            <h1>Добро пожаловать в интернет-магазин <span style="color: #0000A8">1</span><span style="color: red">00</span> <span style="color: #0000A8">ОЧКОВ</span></h1>
             <h1>&nbsp; <small>У нас есть:</small></h1> 
         </div>
         <div class="row text-center">
