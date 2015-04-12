@@ -1,34 +1,30 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Категория:</strong>
-  <%= @item.category.title %>
-</p>
+    <div class="row">
+      <div class="col-md-3">
+      <dl>
+          <dt>Категория:</dt>
+          <dd><%= @item.category.title %></dd>
 
-<p>
-  <strong>Название:</strong>
-  <%= @item.title %>
-</p>
+          <dt>Название:</dt>
+          <dd><%= @item.title %></dd>
 
-<p>
-  <strong>Описание:</strong>
-  <%= simple_format(@item.text) %>
-</p>
+          <dt>Описание:</dt>
+          <dd><%= simple_format(@item.text) %></dd>
 
-<p>
-  <strong>Цена:</strong>
-  <%= number_to_currency(@item.price) %>
-</p>
+          <dt>Цена:</dt>
+         <dd><%= number_to_currency(@item.price) %></dd>
+      </dl>
+      </div>
 
-<p>
-  <strong>Изображение:</strong>
-  <%= link_to image_tag(@item.image.url(:medium)), @item.image.url %>
-</p>
+      <div class="col-md-3">
+      <%= link_to image_tag(@item.image.url(:large)), @item.image.url %></div>
+    </div>
 
 
-<%= link_to 'Назад', items_path, :class => "btn btn-default" %>
+<%= link_to 'Назад', @item.category, :class => "btn btn-default" %>
 <% if admin_signed_in? %>
-<%= link_to 'Редактировать', edit_item_path(@item), :class => "btn btn-default" %> |
-<%= link_to 'Удалить', @item, method: :delete, data: { confirm: 'Вы уверены?' },:class => "btn btn-default" %>
+  <%= link_to 'Редактировать', edit_item_path(@item), :class => "btn btn-default" %> 
+  <%= link_to 'Удалить', @item, method: :delete, data: { confirm: 'Вы уверены?' },:class => "btn btn-default" %>
 <% end %>
