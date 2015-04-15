@@ -28,11 +28,11 @@ class LineItemsController < ApplicationController
 
     item = Item.find(params[:item_id])
 
-    @line_item = @cart.line_items.build
+    @line_item = @cart.add_item(item.id)
 
     @line_item.item = item
 
-        respond_to do |format|
+    respond_to do |format|
 
       if @line_item.save
 

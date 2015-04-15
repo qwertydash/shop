@@ -17,10 +17,9 @@
 				<%= number_to_currency(item.price) %>
 			</p>
 			<p>
-				<%= link_to "Добавить в корзину", item_path(item), :class => "btn btn-default" %>
-			</p>
-			<p>
-			<%= button_to 'Add to Cart', line_items_path(:item_id => item) %>
+				<%= button_to 'Добавить в корзину', line_items_path(:item_id => item) , :class => "btn btn-default" %>
+			
+			<%= %>
 			</p>
 			<% if admin_signed_in? %>
         <p>
