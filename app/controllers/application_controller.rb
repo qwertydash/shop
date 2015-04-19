@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :get_categories
+  
+
 
 
 
@@ -16,18 +18,17 @@ private
     end
 	end
 
-
     def after_sign_out_path_for(resource_or_scope)
   	request.referrer
 	end
 
 def get_categories
     @categories = Category.all
-  end
+end
+
+
 
   private
-
- 
 
     def current_cart 
       Cart.find(session[:cart_id])
@@ -36,6 +37,9 @@ def get_categories
       session[:cart_id] = cart.id
       cart
     end
+
+
+
 
 
 

@@ -1,0 +1,27 @@
+<% if notice %>
+
+<p id="notice"><%= notice %></p>
+
+<% end %>
+
+ 
+
+<div class="cart_title">Ваша корзина</div>
+<table class="table">
+<%= render(@cart.line_items) %>
+
+  <tr class="total_line">
+    <td colspan="2">Итого</td>
+    <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+
+  </tr>
+
+ 
+
+</table>
+
+ 
+
+<%= button_to 'Опустошить корзину', @cart, :method => :delete,
+
+    :confirm => 'Уверены?' %>

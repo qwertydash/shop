@@ -25,11 +25,13 @@
         </ul>
 
         <li><%= link_to "О компании", "/link1" %> </li> 
+   
           </ul>
      <% if admin_signed_in? %>
      <ul class="nav navbar-nav ">
      <li><%= link_to "Все товары", items_path %></li>
      <li><%= link_to "Все Категории", categories_path %></li>
+
      </ul>
           <ul class="nav navbar-nav navbar-right">
         <li><%= link_to('Выйти из режима администратора', destroy_admin_session_path, :method => :delete) %></li>

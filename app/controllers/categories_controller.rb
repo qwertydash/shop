@@ -10,6 +10,7 @@ before_filter :check_admin_logged_in!, :except => [:show, :index]
   # GET /categories/1
   # GET /categories/1.json
   def show
+  @cart = current_cart
   end
 
   # GET /categories/new

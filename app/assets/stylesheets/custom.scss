@@ -43,9 +43,10 @@ text-align: center;
 }
 
 .price {
-	font-size:40px;
+	font-size:30px;
 	font-weight: bold;
 	margin-bottom: 20px;
+  line-height: 100%;
 }
 
 
@@ -84,4 +85,9 @@ dl {
 
  .total_line .total_cell {
   font-weight: bold;
+}
+
+
+.col-md-4 img {
+  width: 100%;
 }

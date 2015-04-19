@@ -10,11 +10,13 @@ before_filter :check_admin_logged_in!, :except => [:show, :index]
   # GET /items/1
   # GET /items/1.json
   def show
+     @cart = current_cart
   end
 
   # GET /items/new
   def new
     @item = Item.new
+    
   end
 
   # GET /items/1/edit
@@ -24,6 +26,7 @@ before_filter :check_admin_logged_in!, :except => [:show, :index]
   # POST /items
   # POST /items.json
   def create
+    
     @item = Item.new(item_params)
 
     respond_to do |format|

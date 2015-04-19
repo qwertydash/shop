@@ -8,6 +8,7 @@
 
 	<% @category.items.each do |item| %>
 		<div class="col-md-4", style= "text-align: center;">
+		
 			<%= link_to(item_path(item)) do %>
 				<%= image_tag item.image(:medium) %>
 				<h3 class="textlink"><%= item.title %></h3>
@@ -17,9 +18,9 @@
 				<%= number_to_currency(item.price) %>
 			</p>
 			<p>
-				<%= button_to 'Добавить в корзину', line_items_path(:item_id => item) , :class => "btn btn-default" %>
+				<%= button_to 'Добавить в корзину', line_items_path(:item_id => item) , :class => "btn btn-default"%>
 			
-			<%= %>
+			
 			</p>
 			<% if admin_signed_in? %>
         <p>
@@ -30,6 +31,7 @@
         </p>
         <% end %>
 		</div>
+
 	<% end %>
 </div>
 <hr>
