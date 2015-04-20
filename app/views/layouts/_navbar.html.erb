@@ -24,13 +24,14 @@
         </li>
         </ul>
 
-        <li><%= link_to "О компании", "/link1" %> </li> 
+        <li><%= link_to "О компании", "/about" %> </li> 
    
           </ul>
      <% if admin_signed_in? %>
      <ul class="nav navbar-nav ">
      <li><%= link_to "Все товары", items_path %></li>
      <li><%= link_to "Все Категории", categories_path %></li>
+     <li><%= link_to "Все заказы", orders_path %></li>
 
      </ul>
           <ul class="nav navbar-nav navbar-right">

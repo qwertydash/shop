@@ -1,0 +1,30 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "ФИО" %><br>
+    <%= f.text_field :name, :size => 40, :placeholder => "Иванов Иван Иванович"%>
+  </div>
+  <div class="field">
+    <%= f.label :phone, "Телефон" %><br>
+    <%= f.text_field :phone, :placeholder => "Например, 89123456789", :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :store, "Выберите магазин, в котором вы хотите забрать" %><br>
+        <%= f.select :store, Order::STORES,
+                  :prompt => 'Список' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Отправить заказ" %>
+  </div>
+<% end %>
