@@ -3,16 +3,15 @@
     <div class="row">
       <div class="col-md-3">
       <dl>
-          <dt>Категория:</dt>
+          <dt>Категория: </dt>
           <dd><%= @item.category.title %></dd>
 
-          <dt>Название:</dt>
+          <dt>Название: </dt>
           <dd><%= @item.title %></dd>
 
-          <dt>Описание:</dt>
           <dd><%= simple_format(@item.text) %></dd>
 
-          <dt>Цена:</dt>
+          <dt>Цена: </dt>
          <dd><%= number_to_currency(@item.price) %></dd>
       </dl>
       </div>

@@ -1,19 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>ФИО</strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @order.phone %>
+  <strong>Телефон:</strong>
+  <%= number_to_phone(@order.phone) %>
 </p>
 
 <p>
-  <strong>Store:</strong>
+  <strong>Магазин:</strong>
   <%= @order.store %>
 </p>
+
+
+<table class="table">
+<%= render(@order.line_items) %>
+
+  <tr class="total_line">
+    <td colspan="2">Итого</td>
+    <td><%=  @order.line_items.map(&:total_price).sum %></td>
+  </tr>
+
+ 
+
+</table>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
