@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-before_filter :check_admin_logged_in!, only: [:index, :show]
+before_filter :check_admin_logged_in!, only: [:index, :show, :update, :destroy]
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
+    
   end
 
   # GET /orders/1
@@ -46,7 +47,7 @@ before_filter :check_admin_logged_in!, only: [:index, :show]
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to(root_path, :notice => 
-          'Спасибо за заказ') }
+          "Спасибо за покупку, ваш номер заказа # #{@order.id}") }
         format.xml  { render :xml => @order, :status => :created,
           :location => @order }
       else
